@@ -1,0 +1,1 @@
+java -jar build/libs/otusHighload-0.0.1-SNAPSHOT.jar
