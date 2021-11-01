@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container my-3">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <h2>Clients</h2>
+            <div th:each="client : ${friends}">
+                <h5 th:text="${client.id}">id</h5>
+                <span>Name    </span> <span th:text="${client.name}"> Name </span>
+                <span>Surname    </span> <span th:text="${client.surname}"> Surname </span>
+                <span>Gender    </span> <span th:text="${client.gender}"> Gender </span>
+                <span>City    </span> <span th:text="${client.city}"> City </span>
+                <span>Hobbies    </span><span th:each="hobbie : ${client.hobbies}"
+                                              th:text="${hobbie.name}   "> Hobbie </span>
+            </div>
+        </div>
+    </div>
+</div>
+<a th:href="@{/ws/public/clients/}">All clients list</a>
+<a th:href="@{/ws/auth/logout/}">logout</a>
+</body>
+</html>
